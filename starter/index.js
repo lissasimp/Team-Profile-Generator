@@ -15,28 +15,27 @@ const render = require("./src/page-template.js");
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 //manager questions - pseudocode from Office hours tutor
 
-const = employess
 inquirer
 .prompt([
     {
         type: "input",
-        message: "What is the manager's Name?",
-        name: "name",
+        message: "Manager's Name?",
+        name: "managerName",
     },
     {
         type: "input",
-        message: "What is the manager's Id?",
-        name: "ID",
+        message: "Manager's Id?",
+        name: "managerID",
     },
     {
         type: "input",
-        message: "What is the manager's email?",
-        name: "email",
+        message: "Manager's Email?",
+        name: "managerEmail",
     },
     {
         type: "input",
-        message: "What is the manager's office number?",
-        name: "officeNumber",
+        message: "Manager's Office Number?",
+        name: "managerOfficeNumber",
     },
 
     ]).then(response => {
@@ -58,18 +57,59 @@ const promptForNextEmployee = () => {
 }
 
 const promptForEngineer = () => {
-    inquirer.prompt([{
+    inquirer.prompt([
         //engineer questions  - pseudocode from Office hours tutor
-    }]).then(response => {
+        {
+            type: "input",
+            message: "Engineer's Name?",
+            name: "engineerName",
+        },
+        {
+            type: "input",
+            message: "Engineer's Id?",
+            name: "engineerID",
+        },
+        {
+            type: "input",
+            message: "Engineer's Email?",
+            name: "engineerEmail",
+        },
+        {
+            type: "input",
+            message: "Engineer's Github?",
+            name: "engineerGithub",
+        },
+    
+    ]).then(response => {
         // add new engineer to employees array  - pseudocode from Office hours tutor
         // promptForNextEmployee  - pseudocode from Office hours tutor
     })
-}
+};
 
 const promptForIntern = () => {
-    inquirer.prompt([{
+    inquirer.prompt([
         //intern questions  - pseudocode from Office hours tutor
-    }]).then(response => {
+        {
+            type: "input",
+            message: "Intern's Name?",
+            name: "internName",
+        },
+        {
+            type: "input",
+            message: "Intern's Id?",
+            name: "internID",
+        },
+        {
+            type: "input",
+            message: "Intern's Email?",
+            name: "internEmail",
+        },
+        {
+            type: "input",
+            message: "Intern's School?",
+            name: "internSchool",
+        },
+    ]).then(response => {
         // add new intern to employees array  - pseudocode from Office hours tutor
         // promptForNextEmployee  - pseudocode from Office hours tutor
     })
