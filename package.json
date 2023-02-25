@@ -1,0 +1,25 @@
+{
+  "name": "test-driven-development-team-profile-generator",
+  "version": "1.0.0",
+  "description": "create an application that generates HTML files using input from a command-line interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lissasimp/Test-Driven-Development-Team-Profile-Generator.git"
+  },
+  "author": "Lissa Simpson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lissasimp/Test-Driven-Development-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/lissasimp/Test-Driven-Development-Team-Profile-Generator#readme",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  },
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
+}
