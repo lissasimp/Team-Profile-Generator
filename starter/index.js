@@ -41,12 +41,18 @@ inquirer
     ]).then(response => {
     // populate manager info  - pseudocode from Office hours tutor
     // promptForNexEmployee ()  - pseudocode from Office hours tutor
+    promptForNextEmployee();
 })
 
 const promptForNextEmployee = () => {
-    inquirer.prompt([{
+    inquirer.prompt([
         // choice of 3  - pseudocode from Office hours tutor
-    }]).then(response => {
+        {
+            type: "list",
+            message: ["Engineer", "Manager", "Intern"],
+            name: "employeeRole",
+        },
+]).then(response => {
         // if engineer  - pseudocode from Office hours tutor
         //    promptForEngineer
         // else if intern
