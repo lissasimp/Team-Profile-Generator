@@ -13,7 +13,7 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 //manager questions - pseudocode from Office hours tutor
-var promptForManager = () => {
+const promptForManager = () => {
   inquirer
     .prompt([
       {
@@ -64,8 +64,6 @@ var promptForManager = () => {
       },
     ])
     .then((response) => {
-      // populate manager info  - pseudocode from Office hours tutor
-      // promptForNexEmployee ()  - pseudocode from Office hours tutor
       console.log(response);
       promptForNextEmployee();
     });
@@ -77,7 +75,7 @@ const promptForNextEmployee = () => {
       {
         type: "list",
         message: "Do you want to add another employee or create team?",
-        choices: ["Engineer", "Intern", "Manager",],
+        choices: ["Engineer", "Intern", "Manager", "Create Team"],
         name: "addEmployee",
       },
     ])
@@ -88,18 +86,15 @@ const promptForNextEmployee = () => {
         promptForIntern();
       } else if (response.addEmployee === "Manager") {
         promptForManager();
+    //   } else if (response.addEmployee === "Create Team") {
+    //     buildPage();
       }
     });
 };
 
-//    use the functionality from page-template to generate the team  - pseudocode from Office hours tutor
-//     })
-// }
-
 const promptForEngineer = () => {
   inquirer
     .prompt([
-      //engineer questions  - pseudocode from Office hours tutor
       {
         type: "input",
         message: "Engineer's Name?",
@@ -204,10 +199,19 @@ const promptForIntern = () => {
     .then((response) => {
       // add new intern to employees array  - pseudocode from Office hours tutor
       // promptForNextEmployee  - pseudocode from Office hours tutor
+      promptForNextEmployee();
     });
 };
+promptForManager()
 
 // // const buildPage = () => {
 // // // render(myArrayOfTeamMembers)  - pseudocode from Office hours tutor
 // // }
-
+// const buildPage = () => {
+//     const testArray = []
+//     testArray.push(new  Manager("Dan"...))
+//     testArray.push(new Employee("Daniel"...))
+//     testArray.push(new Intern("Danny".....))
+//  console.log(render(testArray))
+// }
+// buildPage();
