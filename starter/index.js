@@ -14,7 +14,7 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 //manager questions - pseudocode from Office hours tutor
-const promptForManager = () => {
+// const promptForManager = () => {
 inquirer
 .prompt([
     {
@@ -67,10 +67,11 @@ inquirer
     ]).then(response => {
     // populate manager info  - pseudocode from Office hours tutor
     // promptForNexEmployee ()  - pseudocode from Office hours tutor
-
-    promptForNextEmployee()
-    }
-)};
+console.log(response) 
+promptForNextEmployee()
+    },
+    
+);
 
 const promptForNextEmployee = () => {
     inquirer.prompt([
@@ -80,7 +81,8 @@ const promptForNextEmployee = () => {
         // choice of 3  - pseudocode from Office hours tutor
         {
             type: "list",
-            message: ["Engineer", "Manager", "Intern"],
+            message: "Select employee role",
+            choices: ["Engineer", "Manager", "Intern"],
             name: "employeeRole",
         },
 ]).then(response => {
@@ -94,11 +96,12 @@ const promptForNextEmployee = () => {
         } else if ("Manager") {
             promptForManager()
         } else {
-            
+console.log(response)
         }
-        //    use the functionality from page-template to generate the team  - pseudocode from Office hours tutor
     })
-}
+        //    use the functionality from page-template to generate the team  - pseudocode from Office hours tutor
+//     })
+// }
 
 
 const promptForEngineer = () => {
@@ -151,6 +154,7 @@ const promptForEngineer = () => {
     ]).then(response => {
         // add new engineer to employees array  - pseudocode from Office hours tutor
         // promptForNextEmployee  - pseudocode from Office hours tutor
+        promptForNextEmployee()
     })
 };
 
@@ -206,15 +210,16 @@ const promptForIntern = () => {
     })
 }
 
-const buildPage = () => {
-// render(myArrayOfTeamMembers)  - pseudocode from Office hours tutor
-}
+// // const buildPage = () => {
+// // // render(myArrayOfTeamMembers)  - pseudocode from Office hours tutor
+// // }
 
-// const songSnippet = `
-//   <div class="song">
-// <h2>Title: ${music.title}</h2>
-// <p>Artist: ${music.artist} </p>
-// <p>Album:  ${music.album} </p>
+// // const songSnippet = `
+// //   <div class="song">
+// // <h2>Title: ${music.title}</h2>
+// // <p>Artist: ${music.artist} </p>
+// // <p>Album:  ${music.album} </p>
 
-// <h2>${music.title}<span> by ${music.artist}</span></p>
-//   </div>
+// // <h2>${music.title}<span> by ${music.artist}</span></p>
+// //   </div>
+    }
