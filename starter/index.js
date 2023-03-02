@@ -5,6 +5,7 @@ const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const testArray = []
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -64,9 +65,15 @@ const promptForManager = () => {
       },
     ])
     .then((response) => {
-      console.log(response);
+      
+      const myJSON = JSON.stringify(response)
+      testArray.push(new Manager) //not working
+      // console.log(response)
       promptForNextEmployee();
+      // return new Manager
+      
     });
+    
 };
 
 const promptForNextEmployee = () => {
@@ -86,8 +93,8 @@ const promptForNextEmployee = () => {
         promptForIntern();
       } else if (response.addEmployee === "Manager") {
         promptForManager();
-    //   } else if (response.addEmployee === "Create Team") {
-    //     buildPage();
+      } else if (response.addEmployee === "Create Team") {
+        buildPage();
       }
     });
 };
@@ -143,6 +150,9 @@ const promptForEngineer = () => {
     .then((response) => {
       // add new engineer to employees array  - pseudocode from Office hours tutor
       // promptForNextEmployee  - pseudocode from Office hours tutor
+      const myJSON = JSON.stringify(response)
+      testArray.push(new Engineer)
+      // console.log(response)
       promptForNextEmployee();
     });
 };
@@ -199,6 +209,7 @@ const promptForIntern = () => {
     .then((response) => {
       // add new intern to employees array  - pseudocode from Office hours tutor
       // promptForNextEmployee  - pseudocode from Office hours tutor
+      testArray.push(new Intern)
       promptForNextEmployee();
     });
 };
@@ -207,11 +218,11 @@ promptForManager()
 // // const buildPage = () => {
 // // // render(myArrayOfTeamMembers)  - pseudocode from Office hours tutor
 // // }
-// const buildPage = () => {
-//     const testArray = []
-//     testArray.push(new  Manager("Dan"...))
-//     testArray.push(new Employee("Daniel"...))
-//     testArray.push(new Intern("Danny".....))
-//  console.log(render(testArray))
-// }
+const buildPage = () => {
+    
+    
+  
+ console.log(testArray)
+//  render(testArray)
+}
 // buildPage();
