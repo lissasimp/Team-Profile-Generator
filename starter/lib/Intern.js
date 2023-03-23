@@ -2,20 +2,21 @@
 const Employee = require("./Employee");
 
 class Intern extends Employee {
-    constructor(name, id, email, school) { 
-        super(name, id, email);
-        this.school = school;
-    }
-    getSchool() {
-return this.school;
-    }
+  constructor(name, id, email, school) {
+    super(name, id, email);
+    this.school = school;
+  }
+  getSchool() {
+    return this.school;
+  }
 
-    getRole() { //overridden to return 'Intern'
-return "Intern"
-    }
+  getRole() {
+    //overridden to return 'Intern'
+    return "Intern";
+  }
 }
 
-const userOne = new Intern()
+const userOne = new Intern();
 userOne.getSchool();
 userOne.getRole();
 module.exports = Intern;

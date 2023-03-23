@@ -5,7 +5,7 @@ const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const teamMembers= []
+const teamMembers = [];
 
 //https://stackoverflow.com/questions/35048686/whats-the-difference-between-path-resolve-and-path-join
 const OUTPUT_DIR = path.resolve(__dirname, "output"); //this will output 'output'
@@ -67,19 +67,23 @@ const promptForManager = () => {
       },
     ])
     .then((response) => {
-      
       // const myJSON = JSON.stringify(response)
-      teamMembers.push(new Manager(response.managerName, response.managerID, response.managerEmail, response.managerOfficeNumber)) //support by ABC
+      teamMembers.push(
+        new Manager(
+          response.managerName,
+          response.managerID,
+          response.managerEmail,
+          response.managerOfficeNumber
+        )
+      ); //support by ABC
       // console.log(response)
       promptForNextEmployee();
       // return new Manager
-      
     });
-    
 };
 
- 
-const promptForNextEmployee = () => { //pseudocode (function) from Office hours tutor
+const promptForNextEmployee = () => {
+  //pseudocode (function) from Office hours tutor
   inquirer
     .prompt([
       //next employee questions (written by me)
@@ -104,7 +108,8 @@ const promptForNextEmployee = () => { //pseudocode (function) from Office hours 
 };
 
 //gathers user information about engineer
-const promptForEngineer = () => { //prompt function - pseudocode from office hours
+const promptForEngineer = () => {
+  //prompt function - pseudocode from office hours
   inquirer
     .prompt([
       //questions written by me
@@ -155,8 +160,15 @@ const promptForEngineer = () => { //prompt function - pseudocode from office hou
       },
     ])
     .then((response) => {
-      const myJSON = JSON.stringify(response)
-      teamMembers.push(new Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.engineerGithub))
+      const myJSON = JSON.stringify(response);
+      teamMembers.push(
+        new Engineer(
+          response.engineerName,
+          response.engineerID,
+          response.engineerEmail,
+          response.engineerGithub
+        )
+      );
       // console.log(response)
       promptForNextEmployee();
     });
@@ -167,7 +179,7 @@ const promptForIntern = () => {
   inquirer
     .prompt([
       //gather information about intern
-      //intern questions - written by me 
+      //intern questions - written by me
       {
         type: "input",
         message: "Intern's Name?",
@@ -216,26 +228,27 @@ const promptForIntern = () => {
     ])
     .then((response) => {
       // add new intern to employees array  - pseudocode from Office hours tutor
-      teamMembers.push(new Intern(response.internName, response.internID, response.internEmail, response.internSchool))
+      teamMembers.push(
+        new Intern(
+          response.internName,
+          response.internID,
+          response.internEmail,
+          response.internSchool
+        )
+      );
       promptForNextEmployee();
     });
 };
-promptForManager()
+promptForManager();
 
 const buildPage = () => {
-    // //https://www.geeksforgeeks.org/node-js-fs-writefile-method/
-    // //https://stackoverflow.com/questions/20964372/how-to-write-file-to-parent-folder-with-fs-of-nodejs
-   
-  
-    if (!fs.existsSync(OUTPUT_DIR)) {
-      fs.mkdirSync(OUTPUT_DIR);
-    } else {
-  
-      fs.writeFileSync(outputPath, render(teamMembers), "UTF-8");
-      console.log("File created in the output folder");
-    }
-    };
+  // //https://www.geeksforgeeks.org/node-js-fs-writefile-method/
+  // //https://stackoverflow.com/questions/20964372/how-to-write-file-to-parent-folder-with-fs-of-nodejs
 
-   
-
-
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR);
+  } else {
+    fs.writeFileSync(outputPath, render(teamMembers), "UTF-8");
+    console.log("File created in the output folder");
+  }
+};

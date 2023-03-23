@@ -1,24 +1,22 @@
 .card-header {
-    color: #ffffff !important;
-    text-align: center;
-    background-color: #7272df !important;
+  color: #ffffff !important;
+  text-align: center;
+  background-color: #7272df !important;
 }
 
 .team-heading {
-    background-color: #1414b1;
+  background-color: #1414b1;
 }
 
 h1 {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .card-title {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 .card {
-    margin-left: 3rem;
-    width: 20rem;
-    
+  margin-left: 3rem;
+  width: 20rem;
 }
-
