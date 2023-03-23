@@ -1,0 +1,16 @@
+.card-header {
+    color: white !important;
+    text-align: center;
+    background-color: #7272df !important;
+}
+
+.card-title {
+    color: white !important;
+}
+
+.card {
+    margin-left: 3rem;
+    width: 20rem;
+    
+}
+

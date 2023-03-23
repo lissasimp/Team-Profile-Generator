@@ -5,15 +5,17 @@ const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const testArray = []
+const teamMembers= []
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+//https://stackoverflow.com/questions/35048686/whats-the-difference-between-path-resolve-and-path-join
+const OUTPUT_DIR = path.resolve(__dirname, "output"); //this will output 'output'
+const outputPath = path.join(OUTPUT_DIR, "team.html"); //this will output the folder and the file
 
 const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
-//manager questions - pseudocode from Office hours tutor
+//manager questions (written by me) - pseudocode (function) from Office hours tutor
+//Gathers information about the manager
 const promptForManager = () => {
   inquirer
     .prompt([
@@ -66,8 +68,8 @@ const promptForManager = () => {
     ])
     .then((response) => {
       
-      const myJSON = JSON.stringify(response)
-      testArray.push(new Manager) //not working
+      // const myJSON = JSON.stringify(response)
+      teamMembers.push(new Manager(response.managerName, response.managerID, response.managerEmail, response.managerOfficeNumber)) //support by ABC
       // console.log(response)
       promptForNextEmployee();
       // return new Manager
@@ -76,32 +78,36 @@ const promptForManager = () => {
     
 };
 
-const promptForNextEmployee = () => {
+ 
+const promptForNextEmployee = () => { //pseudocode (function) from Office hours tutor
   inquirer
     .prompt([
+      //next employee questions (written by me)
+      //asks user is they want to add another employee or create the new team
       {
         type: "list",
         message: "Do you want to add another employee or create team?",
-        choices: ["Engineer", "Intern", "Manager", "Create Team"],
+        choices: ["Engineer", "Intern", "Create Team"],
         name: "addEmployee",
       },
     ])
+    //response (written by me)
     .then((response) => {
       if (response.addEmployee === "Engineer") {
         promptForEngineer();
       } else if (response.addEmployee === "Intern") {
         promptForIntern();
-      } else if (response.addEmployee === "Manager") {
-        promptForManager();
       } else if (response.addEmployee === "Create Team") {
         buildPage();
       }
     });
 };
 
-const promptForEngineer = () => {
+//gathers user information about engineer
+const promptForEngineer = () => { //prompt function - pseudocode from office hours
   inquirer
     .prompt([
+      //questions written by me
       {
         type: "input",
         message: "Engineer's Name?",
@@ -128,6 +134,7 @@ const promptForEngineer = () => {
         type: "input",
         message: "Engineer's Email?",
         name: "engineerEmail",
+        // https://stackoverflow.com/questions/65189877/how-can-i-validate-that-a-user-input-their-email-when-using-inquirer-npm
         validate: function (email) {
           // Regex mail check (return true if valid mail)
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
@@ -148,19 +155,19 @@ const promptForEngineer = () => {
       },
     ])
     .then((response) => {
-      // add new engineer to employees array  - pseudocode from Office hours tutor
-      // promptForNextEmployee  - pseudocode from Office hours tutor
       const myJSON = JSON.stringify(response)
-      testArray.push(new Engineer)
+      teamMembers.push(new Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.engineerGithub))
       // console.log(response)
       promptForNextEmployee();
     });
 };
 
+//pseudocode from Office hours tutor for function
 const promptForIntern = () => {
   inquirer
     .prompt([
-      //intern questions  - pseudocode from Office hours tutor
+      //gather information about intern
+      //intern questions - written by me 
       {
         type: "input",
         message: "Intern's Name?",
@@ -187,6 +194,7 @@ const promptForIntern = () => {
         type: "input",
         message: "Intern's Email?",
         name: "internEmail",
+        // https://stackoverflow.com/questions/65189877/how-can-i-validate-that-a-user-input-their-email-when-using-inquirer-npm
         validate: function (email) {
           // Regex mail check (return true if valid mail)
           return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
@@ -208,21 +216,26 @@ const promptForIntern = () => {
     ])
     .then((response) => {
       // add new intern to employees array  - pseudocode from Office hours tutor
-      // promptForNextEmployee  - pseudocode from Office hours tutor
-      testArray.push(new Intern)
+      teamMembers.push(new Intern(response.internName, response.internID, response.internEmail, response.internSchool))
       promptForNextEmployee();
     });
 };
 promptForManager()
 
-// // const buildPage = () => {
-// // // render(myArrayOfTeamMembers)  - pseudocode from Office hours tutor
-// // }
 const buildPage = () => {
-    
-    
+    // //https://www.geeksforgeeks.org/node-js-fs-writefile-method/
+    // //https://stackoverflow.com/questions/20964372/how-to-write-file-to-parent-folder-with-fs-of-nodejs
+   
   
- console.log(testArray)
-//  render(testArray)
-}
-// buildPage();
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR);
+    } else {
+  
+      fs.writeFileSync(outputPath, render(teamMembers), "UTF-8");
+      console.log("File created in the output folder");
+    }
+    };
+
+   
+
+
