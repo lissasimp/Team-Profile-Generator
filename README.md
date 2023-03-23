@@ -22,7 +22,7 @@ Your task is to take the given starter code and convert it into a working Node.j
 
 
 ## Usage
-Github: https://bored-app-rkll.netlify.app/
+Github: https://github.com/lissasimp/Test-Driven-Development-Team-Profile-Generator
 ![Output generated](./assets/Images/Screenshot.jpg)
 
 ## Credits
