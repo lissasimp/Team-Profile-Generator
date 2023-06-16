@@ -34,7 +34,7 @@ npm run test
 See the generator in action:
 https://www.loom.com/share/de6fb34c36b34a03a0434b09af0f24e9?sid=8e6c0f6b-589f-4df8-98c5-2f176a3b24c0
 
-## Built With
+## Built with:
 
 - Node.js
 - File system module (fs)
