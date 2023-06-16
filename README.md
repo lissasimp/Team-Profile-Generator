@@ -6,6 +6,18 @@
 - The user is presented with a menu with the option to: add an engineer, add an intern or finish building the team.
 - The user can collate information about their team such as name, ID, email etc.
 
+## Table of Contents
+- [Features](#features)
+- [User Story](#user-story)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#tests)
+- [License](#license)
+- [Links](#links)
+- [Technology Used](#technology-used)
+- [Credits](#credits)
+- [Permission](#permission)
+
 ## User Story
 As a manager, I want to generate a webpage that displays my team's basic info so that I have quick access to their emails and GitHub profiles.
 
@@ -21,7 +33,7 @@ Run 'node index.js' to run program
 
 Open the 'team.html' file from the output folder in a web browser to view
 
-## Testing
+## Tests
 
 This application contains test driven development using the node package "Jest".
 Use the following command to test that all core functions are working correctly:
@@ -34,7 +46,7 @@ npm run test
 See the generator in action:
 https://www.loom.com/share/de6fb34c36b34a03a0434b09af0f24e9?sid=8e6c0f6b-589f-4df8-98c5-2f176a3b24c0
 
-## Built with:
+## Technology Used:
 
 - Node.js
 - File system module (fs)
