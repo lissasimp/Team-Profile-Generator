@@ -1,29 +1,38 @@
 # Team Profile Generator
-Your task is to take the given starter code and convert it into a working Node.js command-line application. This application will take in information about employees on a software engineering team, then generate an HTML webpage that displays summaries for each person.
+
+## Features
+### This application has the following features:
+- A user can generate a webpage that display's basic information about their team from the command line.
+- The user is presented with a menu with the option to: add an engineer, add an intern or finish building the team.
+- The user can collate information about their team such as name, ID, email etc.
 
 ## User Story
+As a manager, I want to generate a webpage that displays my team's basic info so that I have quick access to their emails and GitHub profiles.
 
-- **AS** a manager
-- **I WANT** to generate a webpage that displays my team's basic info
-- **SO THAT** I have quick access to their emails and GitHub profiles
-
-## Acceptance Criteria
-
-- **WHEN** a user starts the application
-- **THEN** they're prompted to enter the team manager's name, employee ID, email address, office number
-- **WHEN** a user enters those requirements
-- **THEN** the user is presented with a menu with the option to: add an engineer, add an intern or finish building the team
-- **WHEN** a user selects the engineer option
-- **THEN** the user is prompted to enter the following (name, ID, email, Github username) and then taken back to the menu:
-- **WHEN** a user selects the intern option
-- **THEN** the user is prompted to enter the following (name, ID, email, school) and then taken back to the menu:
-- **WHEN** a user decides to finish building their team
-- **THEN** they exit the application and the HTML is generated.
-
+## Installation
+To clone the repo:
+```
+https://github.com/lissasimp/Team-Profile-Generator.git
+``` 
+Run 'npm install' to install dependencies
 
 ## Usage
-Github: https://github.com/lissasimp/Test-Driven-Development-Team-Profile-Generator
-See the generator in action: https://www.loom.com/share/de6fb34c36b34a03a0434b09af0f24e9?sid=8e6c0f6b-589f-4df8-98c5-2f176a3b24c0
+Run 'node index.js' to run program
+
+Open the 'team.html' file from the output folder in a web browser to view
+
+## Testing
+
+This application contains test driven development using the node package "Jest".
+Use the following command to test that all core functions are working correctly:
+
+```
+npm run test
+```
+
+## Links
+See the generator in action:
+https://www.loom.com/share/de6fb34c36b34a03a0434b09af0f24e9?sid=8e6c0f6b-589f-4df8-98c5-2f176a3b24c0
 
 ## Credits
 The following websites were used to support this project:
@@ -32,8 +41,17 @@ The following websites were used to support this project:
 - https://www.youtube.com/watch?v=Qf5EXOyGRxw&t=23s
 - https://www.youtube.com/playlist?list=PL4cUxeGkcC9i5yvDkJgt60vNVWffpblB7
 
+## Permission
+I'm happy for you to use the code or parts of the code for your own site, it is open source so people can learn from it and adapt it. However, I would encourage you to modify the theme and components to make it your own. If you are using the site's design largely unmodified, I'd appreciate being credited as the designer of the website.
+
+I do not give permission to present any of my projects as your own.
+
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
