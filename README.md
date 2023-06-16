@@ -23,7 +23,7 @@ Your task is to take the given starter code and convert it into a working Node.j
 
 ## Usage
 Github: https://github.com/lissasimp/Test-Driven-Development-Team-Profile-Generator
-![Output generated](<div style="position: relative; padding-bottom: 56.69291338582677%; height: 0;"><iframe src="https://www.loom.com/embed/de6fb34c36b34a03a0434b09af0f24e9?sid=7083b7e5-e3a3-48fe-b2d0-c3adc6fc17eb" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>)
+![Output generated](https://www.loom.com/share/de6fb34c36b34a03a0434b09af0f24e9?sid=8e6c0f6b-589f-4df8-98c5-2f176a3b24c0)
 
 ## Credits
 The following websites were used to support this project:
