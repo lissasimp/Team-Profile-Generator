@@ -1,11 +1,5 @@
 # Team Profile Generator
 
-## Features
-### This application has the following features:
-- A user can generate a webpage that display's basic information about their team from the command line.
-- The user is presented with a menu with the option to: add an engineer, add an intern or finish building the team.
-- The user can collate information about their team such as name, ID, email etc.
-
 ## Table of Contents
 - [Features](#features)
 - [User Story](#user-story)
@@ -17,6 +11,12 @@
 - [Technology Used](#technology-used)
 - [Credits](#credits)
 - [Permission](#permission)
+
+## Features
+### This application has the following features:
+- A user can generate a webpage that display's basic information about their team from the command line.
+- The user is presented with a menu with the option to: add an engineer, add an intern or finish building the team.
+- The user can collate information about their team such as name, ID, email etc.
 
 ## User Story
 As a manager, I want to generate a webpage that displays my team's basic info so that I have quick access to their emails and GitHub profiles.
